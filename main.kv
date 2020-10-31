@@ -1,0 +1,226 @@
+Final:
+    orientation:"vertical"
+
+    BoxLayout:
+        canvas:
+            Color:
+                rgba:171/255,149/255,132/255,1
+            Rectangle:
+                size:self.size
+                pos:self.pos
+
+        size_hint_y:0.1
+        MDLabel:
+            text:"Your Order"
+            halign:"center"
+            theme_text_color:"Custom"
+            text_color:1,1,1,1
+
+    Bar:
+        id:bar
+
+    BoxLayout:
+        size_hint_y:0.05
+    FloatLayout:
+        BoxLayout:
+            size_hint:1,1
+            orientation:'vertical'
+            BoxLayout:
+                Progress_image:
+            BoxLayout:
+
+        BoxLayout:
+            size_hint:1,1
+            BoxLayout:
+                size_hint_x:0.5
+            BoxLayout:
+
+                ScrollView:
+                    size:1,1
+                    bar_color:1,1,1,0
+                    GridLayout:
+                        size_hint_y:None
+                        height:self.minimum_height
+                        cols:1
+                        BoxLayout:
+                            size_hint_y:None
+                            height:200
+
+                        Detail:
+                            id:detail
+                        BoxLayout:
+                            size_hint_y:None
+                            height:100
+
+            BoxLayout:
+                size_hint_x:0.5
+
+<Bar>:
+    canvas:
+        Color:
+            rgba:1,1,1,1
+        Rectangle:
+            size:self.size
+            pos:self.pos
+    elevation:5
+    size_hint_y:0.1
+    cols:4
+    rows:2
+    MDLabel:
+        id:conf_cus
+        text:"Confirming"
+        opacity:0.5
+        halign:"center"
+        font_style:"Caption"
+        font_size:15
+        theme_text_color:"Custom"
+        text_color:171/255,149/255,132/255,1
+
+    MDLabel:
+        id:prep_cus
+        text:"Preparing"
+        opacity:0.5
+        halign:"center"
+        font_style:"Caption"
+        font_size:15
+        theme_text_color:"Custom"
+        text_color:171/255,149/255,132/255,1
+
+    MDLabel:
+        id:on_the_cus
+        text:"On the way"
+        opacity:0.5
+        halign:"center"
+        font_style:"Caption"
+        font_size:15
+        theme_text_color:"Custom"
+        text_color:171/255,149/255,132/255,1
+
+    MDLabel:
+        id:deli_cus
+        text:"Delivery"
+        opacity:0.5
+        halign:"center"
+        font_style:"Caption"
+        font_size:15
+        theme_text_color:"Custom"
+        text_color:171/255,149/255,132/255,1
+
+    Progressbar_image:
+        id:confirming
+
+    Progressbar_image:
+        id:preparing
+    Progressbar_image:
+        id:on_the_way
+    Progressbar_image:
+        id:delivery
+
+
+
+<Progressbar_image>:
+    Image:
+        id:ppb_img
+
+        opacity:0.3
+
+<Track_icon@MDFloatingActionButton+MDTooltip>:
+
+    icon:"map-marker"
+    user_font_size:"30sp"
+    md_bg_color:1,1,0,1
+    tooltip_text:"Track Raider!"
+
+
+
+<Progress_image>:
+    source:"delivary.jpg"
+    allow_stretch:True
+    keep_ratio:False
+
+<Detail>:
+    size_hint_y:None
+    height:self.minimum_height
+    cols:1
+    BoxLayout:
+        canvas:
+            Color:
+                rgba:1,1,1,1
+            Rectangle:
+                size:self.size
+                pos:self.pos
+        size_hint_y:None
+        height:100
+        orientation:"vertical"
+        BoxLayout:
+            size_hint_y:0.2
+            canvas:
+                Color:
+                    rgba:1,1,1,0
+                Rectangle:
+                    pos:self.pos
+                    size:self.size
+            BoxLayout:
+
+            Track_icon:
+            BoxLayout:
+                size_hint_x:0.15
+        BoxLayout:
+            BoxLayout:
+                size_hint_x:0.08
+            MDLabel:
+                text:"Tracking your order"
+
+                font_style:"Caption"
+                font_size:25
+                center_x:1.5
+
+    MDList:
+        canvas:
+            Color:
+                rgba:1,1,1,1
+            Rectangle:
+                size:self.size
+                pos:self.pos
+        id:final_list
+        size_hint_y:None
+        height:self.minimum_height
+
+        Raider_list:
+        Food_list:
+        Food_list:
+        Food_list:
+        Food_list:
+        Customer_list:
+
+
+<Food_list>:
+    size_hint_y:None
+    height:70
+    text:self.text
+    secondary_text:self.secondary_text
+
+<Customer_list>:
+    size_hint_y:None
+    height:90
+    text:"Your Info"
+    secondary_text:self.secondary_text
+    tertiary_text:self.tertiary_text
+<Raider_list>:
+    size_hint_y:None
+    height:70
+    text:"Raider"
+    secondary_text:self.secondary_text
+    tertiary_text:self.tertiary_text
+    IconRightWidget:
+        icon:"phone"
+        user_font_size:"40sp"
+
+
+
+
+
+
+
+
+
